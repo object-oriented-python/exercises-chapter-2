@@ -1,5 +1,7 @@
-# Week 2 Exercises
+# Object-oriented Programming in Python for Mathematicians
 
-Refer to the exercise instructions at https://object-oriented-python.github.io/2_programs_in_files.html 
+## Chapter 2 Exercises
 
-The tests build sequentially, so by exercise 2.6, all tests should pass with a correct implementation.
+Refer to the [exercise instructions](https://object-oriented-python.github.io/2_programs_in_files.html#exercises). 
+
+The tests build sequentially, so by exercise 2.5, all tests should pass with a correct implementation.

@@ -1,9 +1,9 @@
 {
   "tests": [
     {
-      "name": "exercise-2-4",
+      "name": "exercise-2-3",
       "setup": "sudo -H pip3 install pytest",
-      "run": "pytest tests/test_exercise_2_4.py",
+      "run": "pytest tests/test_exercise_2_3.py",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -11,7 +11,7 @@
       "points": 1
     },
     {
-      "name": "exercise-2-5",
+      "name": "exercise-2-4",
       "setup": "sudo -H pip3 install setuptools",
       "run": "python3 -m pip install -e .",
       "input": "",
@@ -21,9 +21,9 @@
       "points": 1
     },
     {
-      "name": "exercise-2-6",
+      "name": "exercise-2-5",
       "setup": "",
-      "run": "pytest tests/test_exercise_2_6.py",
+      "run": "pytest tests/test_exercise_2_5.py",
       "input": "",
       "output": "",
       "comparison": "included",
