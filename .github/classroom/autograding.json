@@ -12,7 +12,7 @@
     },
     {
       "name": "exercise-2-4",
-      "setup": "sudo -H pip3 install setuptools",
+      "setup": "",
       "run": "python3 -m pip install -e .",
       "input": "",
       "output": "",
