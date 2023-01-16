@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "exercise-2-3",
-      "setup": "sudo -H pip3 install pytest",
+      "setup": "sudo -H pip3 install pytest numpy",
       "run": "pytest tests/test_exercise_2_3.py",
       "input": "",
       "output": "",
