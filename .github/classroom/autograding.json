@@ -2,8 +2,8 @@
   "tests": [
     {
       "name": "exercise-2-3",
-      "setup": "sudo -H pip3 install pytest numpy",
-      "run": "pytest tests/test_exercise_2_3.py",
+      "setup": "python3 -m venv venv; venv/bin/python -m pip install pytest numpy",
+      "run": "venv/bin/python -m pytest tests/test_exercise_2_3.py",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -13,7 +13,7 @@
     {
       "name": "exercise-2-4",
       "setup": "",
-      "run": "python3 -m pip install -e .",
+      "run": "venv/bin/python -m pip install -e .",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -23,7 +23,7 @@
     {
       "name": "exercise-2-5",
       "setup": "",
-      "run": "pytest tests/test_exercise_2_5.py",
+      "run": "venv/bin/python -m pytest tests/test_exercise_2_5.py",
       "input": "",
       "output": "",
       "comparison": "included",
