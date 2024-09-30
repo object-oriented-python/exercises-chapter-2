@@ -1,11 +1,53 @@
-    name: GitHub Classroom Workflow
-
-    on: [push]
-
-    jobs:
-      build:
-        name: Autograding
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v4
-          - uses: education/autograding@v1
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Install Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: exercise-2-3
+      id: exercise-2-3
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercise-2-3
+        setup-command: python3 -m venv venv; venv/bin/python -m pip install pytest numpy
+        command: "venv/bin/python -m pytest tests/test_exercise_2_3.py"
+        timeout: 1
+        max-score: 1
+    - name: exercise-2-4
+      id: exercise-2-4
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercise-2-4
+        setup-command: ''
+        command: "venv/bin/python -m pip install -e ."
+        timeout: 1
+        max-score: 1
+    - name: exercise-2-5
+      id: exercise-2-5
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercise-2-5
+        setup-command: ''
+        command: "venv/bin/python -m pytest tests/test_exercise_2_5.py"
+        timeout: 1
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        EXERCISE-2-3_RESULTS: "${{steps.exercise-2-3.outputs.result}}"
+        EXERCISE-2-4_RESULTS: "${{steps.exercise-2-4.outputs.result}}"
+        EXERCISE-2-5_RESULTS: "${{steps.exercise-2-5.outputs.result}}"
+      with:
+        runners: exercise-2-3, exercise-2-4, exercise-2-5
